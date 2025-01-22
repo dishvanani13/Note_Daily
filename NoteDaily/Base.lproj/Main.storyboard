@@ -111,7 +111,6 @@
                         <outlet property="btnAddNewNote" destination="7ld-fx-srP" id="t2H-ZW-Wde"/>
                         <outlet property="searchTitle" destination="1Rb-uo-PLB" id="NT2-oe-kwR"/>
                         <outlet property="tblView" destination="9Gv-ID-8s2" id="v7y-Nj-pMB"/>
-                        <outlet property="tblViewCell" destination="lxq-yV-EpP" id="lhu-33-hos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

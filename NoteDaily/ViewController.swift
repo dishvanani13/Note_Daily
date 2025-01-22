@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var searchTitle: UISearchBar!
     
-    @IBOutlet weak var tblViewCell: UITableViewCell!
+    
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var btnAddNewNote: UIButton!
     override func viewDidLoad() {
