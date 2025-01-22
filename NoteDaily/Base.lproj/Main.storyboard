@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoteDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klb-Ti-9IT">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bne-Tg-Z8k">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NoteDaily" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-rJ-BKc">
+                                                <rect key="frame" x="131.66666666666666" y="45.666666666666657" width="129.99999999999997" height="38.333333333333343"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="PTb-rJ-BKc" secondAttribute="bottom" id="8HF-3L-trL"/>
+                                            <constraint firstAttribute="height" constant="84" id="Ilu-KR-NAp"/>
+                                            <constraint firstItem="PTb-rJ-BKc" firstAttribute="centerX" secondItem="bne-Tg-Z8k" secondAttribute="centerX" id="Lu7-bO-8qe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdf-u0-4q5">
+                                        <rect key="frame" x="0.0" y="762" width="393" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-fx-srP">
+                                                <rect key="frame" x="122" y="27.666666666666629" width="149" height="35"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="+ Add New Note"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstItem="7ld-fx-srP" firstAttribute="centerY" secondItem="Wdf-u0-4q5" secondAttribute="centerY" id="IKi-Rs-btK"/>
+                                            <constraint firstAttribute="width" secondItem="Wdf-u0-4q5" secondAttribute="height" multiplier="393:90" id="KOr-jP-tHg"/>
+                                            <constraint firstItem="7ld-fx-srP" firstAttribute="centerY" secondItem="Wdf-u0-4q5" secondAttribute="centerY" id="lE9-5P-S0B"/>
+                                            <constraint firstItem="7ld-fx-srP" firstAttribute="centerX" secondItem="Wdf-u0-4q5" secondAttribute="centerX" id="tya-wl-R8g"/>
+                                        </constraints>
+                                    </view>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1Rb-uo-PLB">
+                                        <rect key="frame" x="0.0" y="84" width="393" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Ab9-5N-Q1Q"/>
+                                            <constraint firstAttribute="width" secondItem="1Rb-uo-PLB" secondAttribute="height" multiplier="393:44" id="rC8-3P-LFI"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="DbA-gc-2fl"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Gv-ID-8s2">
+                                        <rect key="frame" x="8" y="128" width="377" height="626"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lxq-yV-EpP">
+                                                <rect key="frame" x="0.0" y="50" width="377" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lxq-yV-EpP" id="9iB-c3-I2s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="377" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wdf-u0-4q5" secondAttribute="trailing" id="13K-w3-Mg0"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Gv-ID-8s2" secondAttribute="trailing" constant="8" id="6J9-5E-qeU"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Rb-uo-PLB" secondAttribute="trailing" id="9YK-sO-bkg"/>
+                                    <constraint firstItem="bne-Tg-Z8k" firstAttribute="top" secondItem="Klb-Ti-9IT" secondAttribute="top" id="Gnk-dM-02c"/>
+                                    <constraint firstItem="Wdf-u0-4q5" firstAttribute="top" secondItem="9Gv-ID-8s2" secondAttribute="bottom" constant="8" symbolic="YES" id="MLj-ZU-jlI"/>
+                                    <constraint firstItem="Wdf-u0-4q5" firstAttribute="leading" secondItem="Klb-Ti-9IT" secondAttribute="leading" id="MNd-B1-0CZ"/>
+                                    <constraint firstItem="9Gv-ID-8s2" firstAttribute="leading" secondItem="Klb-Ti-9IT" secondAttribute="leading" constant="8" id="N0s-SO-rNY"/>
+                                    <constraint firstItem="1Rb-uo-PLB" firstAttribute="top" secondItem="bne-Tg-Z8k" secondAttribute="bottom" id="RVb-dL-FEe"/>
+                                    <constraint firstItem="bne-Tg-Z8k" firstAttribute="leading" secondItem="Klb-Ti-9IT" secondAttribute="leading" id="Tz0-fB-KAh"/>
+                                    <constraint firstAttribute="trailing" secondItem="bne-Tg-Z8k" secondAttribute="trailing" id="YaJ-Uz-g51"/>
+                                    <constraint firstItem="9Gv-ID-8s2" firstAttribute="top" secondItem="1Rb-uo-PLB" secondAttribute="bottom" id="p5K-rf-kbg"/>
+                                    <constraint firstItem="1Rb-uo-PLB" firstAttribute="leading" secondItem="Klb-Ti-9IT" secondAttribute="leading" id="vi7-Vd-X6M"/>
+                                    <constraint firstItem="9Gv-ID-8s2" firstAttribute="width" secondItem="Klb-Ti-9IT" secondAttribute="height" multiplier="377:852" id="xR2-Xl-4r4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wdf-u0-4q5" secondAttribute="bottom" id="xdM-d0-KFB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Klb-Ti-9IT" secondAttribute="bottom" id="lHD-dX-hKc"/>
+                            <constraint firstItem="Klb-Ti-9IT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qJV-jf-Q1N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Klb-Ti-9IT" secondAttribute="trailing" id="uZa-rw-66p"/>
+                            <constraint firstItem="Klb-Ti-9IT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vYe-qU-wGr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAddNewNote" destination="7ld-fx-srP" id="t2H-ZW-Wde"/>
+                        <outlet property="searchTitle" destination="1Rb-uo-PLB" id="NT2-oe-kwR"/>
+                        <outlet property="tblView" destination="9Gv-ID-8s2" id="v7y-Nj-pMB"/>
+                        <outlet property="tblViewCell" destination="lxq-yV-EpP" id="lhu-33-hos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
