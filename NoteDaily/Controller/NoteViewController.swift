@@ -6,16 +6,44 @@
 //
 
 import UIKit
+import CoreData
 
 class NoteViewController: UIViewController {
 
+    var noteList = [Note]()
+    
+    @IBOutlet weak var txtViewDescription: UITextView!
+    @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    @IBOutlet weak var btnBack: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onClickBtnSave(_ sender: UIButton) {
+        print("Inside btn save")
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appdelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
+        let notecell = Note(entity: entity!, insertInto: context)
+        notecell.id = noteList.count as NSNumber
+        notecell.title = txtTitle.text
+        notecell.preview = txtViewDescription.text
+        do{
+            try context.save()
+            noteList.append(notecell)
+            print("Data is Added")
+            navigationController?.popViewController(animated: true)
+        }
+        catch {
+            print("error :  \(error)")
+        }
+    }
+   
+    
     /*
     // MARK: - Navigation
 

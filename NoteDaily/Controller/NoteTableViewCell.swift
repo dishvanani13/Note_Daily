@@ -8,7 +8,8 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblPreview: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
