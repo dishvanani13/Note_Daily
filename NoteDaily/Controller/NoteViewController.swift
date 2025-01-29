@@ -24,14 +24,17 @@ class NoteViewController: UIViewController {
     }
     
     @IBAction func onClickBtnSave(_ sender: UIButton) {
-        print("Inside btn save")
+       
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appdelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
         let notecell = Note(entity: entity!, insertInto: context)
         notecell.id = noteList.count as NSNumber
+        
         notecell.title = txtTitle.text
+        
         notecell.preview = txtViewDescription.text
+        print("note print is here :  \(notecell.preview)")
         do{
             try context.save()
             noteList.append(notecell)
