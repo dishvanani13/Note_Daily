@@ -38,7 +38,7 @@ class NoteViewController: UIViewController {
         do{
             try context.save()
             noteList.append(notecell)
-            print("Data is Added")
+            print("Data is Added ")
             navigationController?.popViewController(animated: true)
         }
         catch {
